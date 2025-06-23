@@ -1,8 +1,8 @@
-import { BankingService } from '../BankingService'
-import { BankAccount } from '../BankAccount'
+import { BankingService } from '../../BankingService'
+import { BankAccount } from '../../BankAccount'
 
 // Mock the BankAccount class
-jest.mock('../BankAccount')
+jest.mock('../../BankAccount')
 
 describe('BankingService', () => {
   let bankingService
