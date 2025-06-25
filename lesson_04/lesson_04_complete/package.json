@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:jest": "jest src/banking/__tests__/jest",
-    "test:vitest": "vitest run src/banking/__tests__/vitest"
+    "test:jest": "jest src/__tests__/jest",
+    "test:vitest": "vitest run src/__tests__/vitest"
   },
   "dependencies": {
     "react": "^18.2.0",
