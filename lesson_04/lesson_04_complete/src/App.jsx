@@ -8,7 +8,6 @@ export function App() {
   const [list] = useState(() => new TodoList())
   const [text, setText] = useState('')
   const [status, setStatus] = useState('pending')
-  const [_, forceUpdate] = useState(0)
 
   function handleAdd(e) {
     e.preventDefault()
@@ -16,7 +15,6 @@ export function App() {
       list.add(new TodoItem(text, status))
       setText('')
       setStatus('pending')
-      forceUpdate(x => x + 1)
     } catch (err) {
       alert(err.message)
     }
@@ -24,12 +22,10 @@ export function App() {
 
   function handleRemove(idx) {
     list.remove(idx)
-    forceUpdate(x => x + 1)
   }
 
   function handleSort() {
     list.sortByStatus()
-    forceUpdate(x => x + 1)
   }
 
   return (
