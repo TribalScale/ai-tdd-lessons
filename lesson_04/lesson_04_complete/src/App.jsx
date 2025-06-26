@@ -1,42 +1,8 @@
 import React, { useState } from 'react'
 import { TodoList } from './TodoList'
 import { TodoItem } from './TodoItem'
-
-function TodoForm({ text, status, onTextChange, onStatusChange, onAdd }) {
-  return (
-    <form onSubmit={onAdd} style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
-      <input
-        value={text}
-        onChange={e => onTextChange(e.target.value)}
-        placeholder="Add a to-do"
-        style={{ flex: 1 }}
-      />
-      <select value={status} onChange={e => onStatusChange(e.target.value)}>
-        <option value="pending">Pending</option>
-        <option value="completed">Completed</option>
-      </select>
-      <button type="submit">Add</button>
-    </form>
-  )
-}
-
-function TodoListView({ items, onRemove, onSort }) {
-  return (
-    <>
-      <button onClick={onSort} style={{ marginBottom: 16 }}>Sort (Pending at bottom)</button>
-      <ul style={{ padding: 0, listStyle: 'none' }}>
-        {items.map((item, idx) => (
-          <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <span style={{ flex: 1, textDecoration: item.getStatus() === 'completed' ? 'line-through' : 'none' }}>
-              {item.getText()} ({item.getStatus()})
-            </span>
-            <button onClick={() => onRemove(idx)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-    </>
-  )
-}
+import { TodoForm } from './TodoForm'
+import { TodoListView } from './TodoListView'
 
 export function App() {
   const [list] = useState(() => new TodoList())
