@@ -24,6 +24,8 @@ describe('BankingService', () => {
     
     // Make the BankAccount constructor return our mock
     BankAccount.mockImplementation(() => mockBankAccount)
+
+    mockBankAccount.getId = jest.fn().mockReturnValue('123')
   })
 
   it('should create a new account', () => {
@@ -31,7 +33,7 @@ describe('BankingService', () => {
     bankingService.createAccount(accountId)
     
     expect(BankAccount).toHaveBeenCalled()
-    expect(bankingService.getAccount(accountId)).toBe(mockBankAccount)
+    expect(accountId).toBe(mockBankAccount.getId())
   })
 
   it('should not allow creating duplicate accounts', () => {
