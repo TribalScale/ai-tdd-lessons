@@ -1,9 +1,14 @@
 import { NotificationService } from './NotificationService'
 
 export class BankAccount {
-  constructor(notificationService = new NotificationService()) {
+  constructor(notificationService = new NotificationService(), id) {
     this.balance = 0
     this.notificationService = notificationService
+    this.id = id
+  }
+
+  getId() {
+    return this.id
   }
 
   getBalance() {
