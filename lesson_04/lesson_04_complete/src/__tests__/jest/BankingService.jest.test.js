@@ -19,13 +19,14 @@ describe('BankingService', () => {
     mockBankAccount = {
       deposit: jest.fn(),
       withdraw: jest.fn(),
-      getBalance: jest.fn()
+      getBalance: jest.fn(),
+      getId: jest.fn()
     }
     
     // Make the BankAccount constructor return our mock
     BankAccount.mockImplementation(() => mockBankAccount)
 
-    mockBankAccount.getId = jest.fn().mockReturnValue('123')
+    jest.spyOn(mockBankAccount, 'getId').mockImplementation(() => '123');
   })
 
   it('should create a new account', () => {
