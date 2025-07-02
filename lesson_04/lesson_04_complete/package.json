@@ -14,12 +14,16 @@
     "test:vitest": "vitest run src/__tests__/vitest"
   },
   "dependencies": {
+    "axios": "^1.10.0",
+    "express": "^5.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "supertest": "^7.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.27.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/react": "^18.2.56",
