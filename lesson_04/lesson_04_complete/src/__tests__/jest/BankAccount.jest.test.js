@@ -3,7 +3,7 @@ import { BankAccount } from '../../BankAccount'
 function createMockNotificationService() {
   return {
     notify: jest.fn(),
-    notifyAsync: jest.fn().mockResolvedValue(undefined),
+    notifyAsync: jest.fn(),
   }
 }
 
