@@ -1,8 +1,7 @@
 class Fetcher {
-  fetchData2() {
-    // Imagine this makes an API call
+  fetchData() {
     return Promise.resolve({ data: 'real data' });
   }
 }
 
-module.exports = Fetcher;=
+module.exports = Fetcher;

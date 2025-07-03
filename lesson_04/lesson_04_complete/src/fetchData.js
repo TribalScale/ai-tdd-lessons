@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 async function fetchData() {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+  const response = await axios.get('some url');
   return response.data;
 }
 
