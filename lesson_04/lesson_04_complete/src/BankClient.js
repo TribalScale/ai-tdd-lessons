@@ -7,7 +7,9 @@ export class BankClient {
 
   async getBankById(id) {
     const data = await this.apiClient.get(`/bank/${id}`)
+    if (!data || !data.id) {
+      throw new Error('Bank account not found')
+    }
     return new SomeBankAccount(data)
   }
 }
-// Contains AI-generated edits.
