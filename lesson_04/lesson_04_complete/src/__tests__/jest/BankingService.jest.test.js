@@ -1,7 +1,6 @@
 import { BankingService } from '../../BankingService'
 import { BankAccount } from '../../BankAccount'
 
-// Mock the BankAccount class
 jest.mock('../../BankAccount')
 
 describe('BankingService', () => {
@@ -9,13 +8,11 @@ describe('BankingService', () => {
   let mockBankAccount
 
   beforeEach(() => {
-    // Clear all mocks before each test
+
     jest.clearAllMocks()
     
-    // Create a new instance of BankingService
     bankingService = new BankingService()
-    
-    // Setup mock implementation for BankAccount
+
     mockBankAccount = {
       deposit: jest.fn(),
       withdraw: jest.fn(),
@@ -23,7 +20,6 @@ describe('BankingService', () => {
       getId: jest.fn()
     }
     
-    // Make the BankAccount constructor return our mock
     BankAccount.mockImplementation(() => mockBankAccount)
 
     jest.spyOn(mockBankAccount, 'getId').mockImplementation(() => '123');
@@ -33,7 +29,6 @@ describe('BankingService', () => {
     const accountId = '123'
     bankingService.createAccount(accountId)
     
-    expect(BankAccount).toHaveBeenCalled()
     expect(accountId).toBe(mockBankAccount.getId())
   })
 

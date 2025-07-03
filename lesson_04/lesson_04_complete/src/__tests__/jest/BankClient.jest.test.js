@@ -11,8 +11,6 @@ describe('BankClient', () => {
     }
 
     const client = new BankClient(mockAPIClient)
-
-    // Act
     const result = await client.getBankById('abc')
 
     expect(result.id).toBe('abc')
