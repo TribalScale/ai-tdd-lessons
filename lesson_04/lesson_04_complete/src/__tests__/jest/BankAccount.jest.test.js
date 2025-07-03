@@ -7,7 +7,7 @@ function createMockNotificationService() {
   }
 }
 
-describe('BankAccount with NotificationService', () => {
+describe('BankAccount', () => {
   it('notifies on large withdrawal', () => {
     const mockService = createMockNotificationService()
     const account = new BankAccount(mockService)
