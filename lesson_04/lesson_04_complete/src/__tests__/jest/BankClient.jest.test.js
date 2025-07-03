@@ -1,12 +1,10 @@
-/* global jest */
-// jest is provided by the test runner environment
-// eslint-disable-next-line no-undef
+import jest from 'jest-mock'
 
 import { BankClient } from '../../BankClient'
 import { SomeBankAccount } from '../../SomeBankAccount'
 
 describe('BankClient', () => {
-    
+
   it('should fetch bank account by id and return a SomeBankAccount object', async () => {
     // Arrange: mock APIClient
     const mockApiResponse = { id: 'abc' }
