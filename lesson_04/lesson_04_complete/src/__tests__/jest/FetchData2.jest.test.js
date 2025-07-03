@@ -10,6 +10,7 @@ describe('Fetcher', () => {
 
   it('should return api data', async () => {
     const result = await fetcher.fetchData();
+    expect(fetcher.fetchData).toHaveBeenCalled();
     expect(result).toEqual({ data: 'mocked data' });
   });
 });
