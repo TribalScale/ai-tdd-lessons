@@ -1,4 +1,4 @@
-import { BankAccount } from '../BankAccount'
+import { BankAccount } from '../../BankAccount'
 
 describe('BankAccount', () => {
     it('should create an account with initial balance of 0', () => {

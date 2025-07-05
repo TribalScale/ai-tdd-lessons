@@ -3,4 +3,3 @@ export class SomeBankAccount {
     this.id = id
   }
 }
-// Contains AI-generated edits.

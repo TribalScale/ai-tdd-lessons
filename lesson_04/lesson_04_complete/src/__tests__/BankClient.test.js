@@ -1,6 +1,6 @@
 
-import { BankClient } from '../../BankClient'
-import { SomeBankAccount } from '../../SomeBankAccount'
+import { BankClient } from '../BankClient'
+import { SomeBankAccount } from '../SomeBankAccount'
 
 describe('BankClient', () => {
 

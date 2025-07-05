@@ -1,4 +1,4 @@
-const Fetcher = require('../../Fetcher');
+const Fetcher = require('../Fetcher');
 
 describe('Fetcher', () => {
   let fetcher;
