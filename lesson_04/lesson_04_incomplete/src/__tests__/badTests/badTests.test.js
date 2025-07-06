@@ -38,7 +38,7 @@ describe('Bad Test Examples for BankingService', () => {
     const accountId = '123'
     bankingService.createAccount(accountId)
     bankingService.deposit(accountId, 100)
-    // Directly checking the mock, not the observable behavior
+    
     expect(mockBankAccount.deposit.mock.calls.length).toBe(1)
   })
 
