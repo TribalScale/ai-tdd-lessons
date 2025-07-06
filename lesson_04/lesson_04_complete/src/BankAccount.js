@@ -1,6 +1,6 @@
 import { NotificationService } from './NotificationService'
 
-export class BankAccount {
+class BankAccount {
   constructor(notificationService = new NotificationService(), id) {
     this.balance = 0
     this.notificationService = notificationService
@@ -41,12 +41,12 @@ export class BankAccount {
       throw new Error('Withdrawal amount must be positive')
     }
     if (amount > this.balance) {
-      await this.notificationService.notifyAsync('Insufficient funds for withdrawal')
+      this.notificationService.notify('Insufficient funds for withdrawal')
       throw new Error('Insufficient funds')
     }
-    if (amount >= 1000) {
-      await this.notificationService.notifyAsync('Large withdrawal detected')
-    }
     this.balance -= amount
+    return this.balance
   }
-} 
+}
+
+export default BankAccount
