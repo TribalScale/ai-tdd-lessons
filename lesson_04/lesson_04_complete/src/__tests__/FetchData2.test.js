@@ -5,12 +5,14 @@ describe('Fetcher', () => {
 
   beforeEach(() => {
     fetcher = new Fetcher();
-    jest.spyOn(fetcher, 'fetchData').mockImplementation(() => Promise.resolve({ data: 'mocked data' }));
-  });
+    jest.spyOn(fetcher, 'checkForSomething');
+  })
 
   it('should return api data', async () => {
-    const result = await fetcher.fetchData();
-    expect(fetcher.fetchData).toHaveBeenCalled();
-    expect(result).toEqual({ data: 'mocked data' });
+
+    const result = await fetcher.fetchData(true);
+
+    expect(fetcher.checkForSomething).toHaveBeenCalled();
+
   });
 });
